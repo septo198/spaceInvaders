@@ -1,4 +1,4 @@
-# Space invaders
+Space invaders
 
 Little project realized in 2016 with a classmate in js. 
 
