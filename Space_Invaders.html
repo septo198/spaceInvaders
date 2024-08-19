@@ -1,0 +1,74 @@
+<html>
+	<head>
+		<title>Space Invaders</title>
+		<meta charset="UTF-8">
+		<script type="text/javascript" src="Js\Javascript.js"></script>
+		<link rel="stylesheet" type="text/css" href="Css/Styles.css"> 
+	</head>
+	<body id="corpoGioco" onload="avvio()" onKeyDown="gioca(event)" >
+		
+		<audio autoplay loop >
+			<source id="sfondoMusic" src="Music/Sfondo.mp3" type="audio/mpeg">
+			Your browser does not support the audio element.
+		</audio>
+		
+		<audio id="sparoMusic" >
+			<source src="Music/Missile.wav" type="audio/wav">
+		</audio>
+		
+		<audio id="razzoMusic" >
+			<source src="Music/Razzo.wav" type="audio/wav">
+		</audio>
+		
+		<audio id="explosion" >
+			<source src="Music/Esplosione.wav" type="audio/wav">
+		</audio>
+		
+		<img id="madre" style="left:0px; top:0px; height:25px; width:25px; display:none; position:absolute;"  src="Images/Nave_madre.png" alt="Nave Madre">
+		
+		<img id="n1" style="left:15px; top:10px; height:25px; width:25px; display:block;"  class="alieni" src="Images/Alieno1Giu.png" alt="Alieno">
+		<img id="n2" style="left:60px; top:10px; height:25px; width:25px; display:block;"  class="alieni" src="Images/Alieno1Giu.png" alt="Alieno">
+		<img id="n3" style="left:105px; top:10px; height:25px; width:25px; display:block;"  class="alieni" src="Images/Alieno1Giu.png" alt="Alieno">
+		<img id="n4" style="left:150px; top:10px; height:25px; width:25px; display:block;"  class="alieni" src="Images/Alieno1Giu.png" alt="Alieno">
+		<img id="n5" style="left:195px; top:10px; height:25px; width:25px; display:block;"  class="alieni" src="Images/Alieno1Giu.png" alt="Alieno">
+		<img id="n6" style="left:240px; top:10px; height:25px; width:25px; display:block;"  class="alieni" src="Images/Alieno1Giu.png" alt="Alieno">
+		<img id="n7" style="left:285px; top:10px; height:25px; width:25px; display:block;"  class="alieni" src="Images/Alieno1Giu.png" alt="Alieno">
+		<img id="n8" style="left:330px; top:10px; height:25px; width:25px; display:block;"  class="alieni" src="Images/Alieno1Giu.png" alt="Alieno">
+		<img id="n9" style="left:15px; top:55px; height:25px; width:25px; display:block;"  class="alieni" src="Images/Alieno2Giu.png" alt="Alieno">
+		<img id="n10" style="left:60px; top:55px; height:25px; width:25px; display:block;"  class="alieni" src="Images/Alieno2Giu.png" alt="Alieno">
+		<img id="n11" style="left:105px; top:55px; height:25px; width:25px; display:block;"  class="alieni" src="Images/Alieno2Giu.png" alt="Alieno">
+		<img id="n12" style="left:150px; top:55px; height:25px; width:25px; display:block;"  class="alieni" src="Images/Alieno2Giu.png" alt="Alieno">
+		<img id="n13" style="left:195px; top:55px; height:25px; width:25px; display:block;"  class="alieni" src="Images/Alieno2Giu.png" alt="Alieno">
+		<img id="n14" style="left:240px; top:55px; height:25px; width:25px; display:block;"  class="alieni" src="Images/Alieno2Giu.png" alt="Alieno">
+		<img id="n15" style="left:285px; top:55px; height:25px; width:25px; display:block;"  class="alieni" src="Images/Alieno2Giu.png" alt="Alieno">
+		<img id="n16" style="left:330px; top:55px; height:25px; width:25px; display:block;"  class="alieni" src="Images/Alieno2Giu.png" alt="Alieno">	
+		<img id="n17" style="left:15px; top:100px; height:25px; width:25px; display:block;"  class="alieni" src="Images/Alieno3Giu.png" alt="Alieno">
+		<img id="n18" style="left:60px; top:100px; height:25px; width:25px; display:block;"  class="alieni" src="Images/Alieno3Giu.png" alt="Alieno">
+		<img id="n19" style="left:105px; top:100px; height:25px; width:25px; display:block;"  class="alieni" src="Images/Alieno3Giu.png" alt="Alieno">
+		<img id="n20" style="left:150px; top:100px; height:25px; width:25px; display:block;"  class="alieni" src="Images/Alieno3Giu.png" alt="Alieno">
+		<img id="n21" style="left:195px; top:100px; height:25px; width:25px; display:block;"  class="alieni" src="Images/Alieno3Giu.png" alt="Alieno">
+		<img id="n22" style="left:240px; top:100px; height:25px; width:25px; display:block;"  class="alieni" src="Images/Alieno3Giu.png" alt="Alieno">
+		<img id="n23" style="left:285px; top:100px; height:25px; width:25px; display:block;"  class="alieni" src="Images/Alieno3Giu.png" alt="Alieno">
+		<img id="n24" style="left:330px; top:100px; height:25px; width:25px; display:block;"  class="alieni" src="Images/Alieno3Giu.png" alt="Alieno">
+		
+		<img id="Bunker1" style="width:40px; height:40px; position:absolute; top:340px; left:50px; display:block;" src="Images/Bunker4.png"  />
+		<img id="Bunker2" style="width:40px; height:40px; position:absolute; top:340px; left:190px; display:block;" src="Images/Bunker4.png"  />
+		<img id="Bunker3" style="width:40px; height:40px; position:absolute; top:340px; left:330px; display:block;" src="Images/Bunker4.png"  />
+		<img id="Bunker4" style="width:40px; height:40px; position:absolute; top:340px; left:480px; display:block;" src="Images/Bunker4.png"  />
+		
+		<img id="giocatore" style="width:25px; height:25px; position:absolute; top:405px; left:275px;" src="Images/Giocatore.png"  />
+		<img id="missile" 	style="width:2px; display:none; position:absolute;"	src="Images/Missile2.png"  />
+		<img id="sparo" 	style="width:2px; display:none; position:absolute;"	src="Images/Missile.png"  />
+		
+		<div id="dati">
+			<h3 style="position:absolute; left:10px; top:-10px;">Player informations </h3>
+			<br />
+			<p style="position:absolute; left:10px;">Name: </p>
+			<p id="name" style="position:absolute; left:90px;"></p>
+			<p style="position:absolute; left:130px;">Points: </p>
+			<p id="points" style="position:absolute; left:210px;"></p>
+			<p style="position:absolute; left:230px;">Lifes: </p>
+			<p id="lifes" style="position:absolute; left:310px;"></p>
+		</div>
+	</body>
+</html>     
